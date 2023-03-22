@@ -1,0 +1,14 @@
+<h1>Components</h1>
+<p>Components are important as we start with the <code>AppComponent</code>. It is a normal Angular Component and on the other hand it is also a special because it servers as our <b>root</b> component in the AppModule in the <code>bootstrap</code> array in the <code>app.module.ts</code> file which tells Angular that it is a special component and that we should bootstrap the entire application with that component being the <code>root</code> component. So, all the other components that we create will not be added to the <code>index.html</code> file and their selectors will not be added here as they will be added to the <code>app.component.html</code> file because it is the <code>root</code> component of the app with respect to the other parts.</p>
+
+<h2>Adding Component</h2>
+<p>Say, we want to output some information about a server as we are building a backend for a Server Application, so we can store it in a new folder which is the sub folder of the app folder because generally in an Angular CLI Project, all the <code>app</code> related content will be present within the <code>app</code> folder. Suppose the name of the sub-folder is <b><code>Server</code></b> because it holds the Server Component. <u>It is a good practice to have the Folder Name equal to the Component Name and each component should have it's own folder.</u> </p>
+<p>Now, while creating the <code>server</code> component, the syntax which we can use is:</p>
+<p><code> COMPONENT_NAME.component.ts</code></p>
+<p>The file extension for the component is <code>ts</code> which refers to <b>TypeScript</b> in which we will code the component.</p>
+
+<h2>How to create a component</h2>
+<p>A Component is simply a TypeScript class so that Angular is able to instantiate it to create objects based on the blueprint that we will setup.</p>
+<p>The naming convention for the TypeScript class is:</p>
+<code>COMPONENT_NAMEComponent</code>, where COMPONENT_NAME is the name of the component.
+<p>This is a normal class and that is the reason we need to tell Angular that this is a special type of class, a <b>Component</b>. We can do this by adding <b>Decorators</b> which are a special feature which allows us to enhance our classes using elements. Components are always added by using <code>@Component</code> before the class. And, since this is also unknown to the class, we will need to <b>import</b> the file which will inform about these components from the <code>@angular/core</code>. We have used <code>@angular/core</code> because Angular shifts between a lot of packages where it, basically, groups its functionality and <code>core</code> gives us access to some of the core functionalities.</p>
