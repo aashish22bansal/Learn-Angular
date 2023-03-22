@@ -12,3 +12,15 @@
 <p>The naming convention for the TypeScript class is:</p>
 <code>COMPONENT_NAMEComponent</code>, where COMPONENT_NAME is the name of the component.
 <p>This is a normal class and that is the reason we need to tell Angular that this is a special type of class, a <b>Component</b>. We can do this by adding <b>Decorators</b> which are a special feature which allows us to enhance our classes using elements. Components are always added by using <code>@Component</code> before the class. And, since this is also unknown to the class, we will need to <b>import</b> the file which will inform about these components from the <code>@angular/core</code>. We have used <code>@angular/core</code> because Angular shifts between a lot of packages where it, basically, groups its functionality and <code>core</code> gives us access to some of the core functionalities.</p>
+
+<h2>Accessing the Server Component</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>This is a container for the Server Component</h3>
+            <hr>
+            <app-server></app-server>
+            <h3>End of Container for the Server Component</h3>
+        </div>
+    </div>
+</div>
