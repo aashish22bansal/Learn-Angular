@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class DataBindingTwoWayBindingComponent {
   allowNewServer = false; // This button could be toggled through the HTML File using the "disabled" attribute.
   ServerCreationStatus = 'No Server was created!'; // This property could also be displayed as output using String Interpolation.
-  serverName = '';
+  serverName = 'TestServer';
 
   constructor() {
     setTimeout((/** Method Parameters */) => {/** Method Body */
