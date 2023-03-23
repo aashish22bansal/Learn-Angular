@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+// import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http'
-import { HttpClient } from '@angular/common/http'
+// import { HttpClient } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
+import { WarningAlertComponent } from './warning-alert/warning-alert.component';
+import { SucessAlertComponent } from './sucess-alert/sucess-alert.component';
 
 /** We can see that the AppModule is just an empty TypeScript class like our Component and we transform it to something else by using Decorator (in this case, the NgModule Decorator imported from @angular/core). */
 /** Now, within the @NgModule, we can see 4 properties:
@@ -25,13 +27,15 @@ import { ServersComponent } from './servers/servers.component';
   declarations: [
     AppComponent,
     ServerComponent,
-    ServersComponent
+    ServersComponent,
+    WarningAlertComponent,
+    SucessAlertComponent
   ],
   imports: [
     BrowserModule, // This module gives us all the base functionality using which we will need to start our application.
     AppRoutingModule,
     FormsModule,
-    HttpModule,
+    // HttpModule,
     HttpClientModule,
     // HttpClient
   ],
