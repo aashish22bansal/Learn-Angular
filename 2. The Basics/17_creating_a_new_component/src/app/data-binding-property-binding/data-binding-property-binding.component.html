@@ -1,0 +1,8 @@
+<p>data-binding-property-binding works!</p>
+<h4>Property Binding</h4>
+<div class="container">
+    <p>Suppose we wnat to allow the user to add servers by clicking on the Button below:</p>
+    <button class="btn btn-primary" [disabled]="!allowNewServer"></button>
+    <p>But at this point, the button is just a static button is just a static button and it cannot do anything. So, we will add a new property in the TypeScript Code named allowNewServer as a boolean value. (Heading to TypeScript File to create the variable.)</p>
+    <p>In the constructor we will define a Timeout() method which will trigger after the specified period of time. In the method body, we will set the allowNewServer to be set to <code>true</code> and then use the <code>disabled</code> HTML attribute within Square Brackets (<code>[]</code>) as <code>[disabled]</code> which would indicate that we are using <b>Property Binding</b> to dynamically bind some property and change it in the DOM for the parsed model and then pass the property name used in the TypeScript class as: <code>[disabled] = "!allowNewServer"</code>. This will exactly resolve to <code>true</code> or <code>false</code> based on the property needs.</p>
+</div>
