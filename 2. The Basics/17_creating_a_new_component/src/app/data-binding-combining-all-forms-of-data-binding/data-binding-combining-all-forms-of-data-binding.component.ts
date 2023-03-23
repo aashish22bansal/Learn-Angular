@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-data-binding-two-way-binding',
-  templateUrl: './data-binding-two-way-binding.component.html',
-  styleUrls: ['./data-binding-two-way-binding.component.css']
+  selector: 'app-data-binding-combining-all-forms-of-data-binding',
+  templateUrl: './data-binding-combining-all-forms-of-data-binding.component.html',
+  styleUrls: ['./data-binding-combining-all-forms-of-data-binding.component.css']
 })
-export class DataBindingTwoWayBindingComponent implements OnInit {
+export class DataBindingCombiningAllFormsOfDataBindingComponent implements OnInit {
   allowNewServer = false; // This button could be toggled through the HTML File using the "disabled" attribute.
   ServerCreationStatus = 'No Server was created!'; // This property could also be displayed as output using String Interpolation.
   serverName = 'TestServer';
@@ -19,7 +19,7 @@ export class DataBindingTwoWayBindingComponent implements OnInit {
   ngOnInit(){}
 
   onCreateServer(){
-    this.ServerCreationStatus = 'Server was Created!';
+    this.ServerCreationStatus = 'Server was Created!\n The Name of the server is ' + this.serverName;
   }
 
   onUpdateServerName(event: Event){
