@@ -16,6 +16,7 @@ import { DynammicServerComponent } from './dynammic-server/dynammic-server.compo
 import { DataBindingStringInterpolationComponent } from './data-binding-string-interpolation/data-binding-string-interpolation.component';
 import { DataBindingPropertyBindingComponent } from './data-binding-property-binding/data-binding-property-binding.component';
 import { DataBindingEventBindingComponent } from './data-binding-event-binding/data-binding-event-binding.component';
+import { DataBindingTwoWayBindingComponent } from './data-binding-two-way-binding/data-binding-two-way-binding.component';
 
 /** We can see that the AppModule is just an empty TypeScript class like our Component and we transform it to something else by using Decorator (in this case, the NgModule Decorator imported from @angular/core). */
 /** Now, within the @NgModule, we can see 4 properties:
@@ -37,7 +38,8 @@ import { DataBindingEventBindingComponent } from './data-binding-event-binding/d
     DynammicServerComponent,
     DataBindingStringInterpolationComponent,
     DataBindingPropertyBindingComponent,
-    DataBindingEventBindingComponent
+    DataBindingEventBindingComponent,
+    DataBindingTwoWayBindingComponent
   ],
   imports: [
     BrowserModule, // This module gives us all the base functionality using which we will need to start our application.
