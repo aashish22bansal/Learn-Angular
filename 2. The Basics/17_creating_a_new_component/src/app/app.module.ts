@@ -20,6 +20,7 @@ import { DataBindingTwoWayBindingComponent } from './data-binding-two-way-bindin
 import { DataBindingCombiningAllFormsOfDataBindingComponent } from './data-binding-combining-all-forms-of-data-binding/data-binding-combining-all-forms-of-data-binding.component';
 import { AssignmentTwoDataBindingComponent } from './assignment-two-data-binding/assignment-two-data-binding.component';
 import { UnderstandingDirectivesComponent } from './understanding-directives/understanding-directives.component';
+import { UnderstandingDirectivesUsingNglfToOutputDataConditionallyComponent } from './understanding-directives-using-nglf-to-output-data-conditionally/understanding-directives-using-nglf-to-output-data-conditionally.component';
 
 /** We can see that the AppModule is just an empty TypeScript class like our Component and we transform it to something else by using Decorator (in this case, the NgModule Decorator imported from @angular/core). */
 /** Now, within the @NgModule, we can see 4 properties:
@@ -45,7 +46,8 @@ import { UnderstandingDirectivesComponent } from './understanding-directives/und
     DataBindingTwoWayBindingComponent,
     DataBindingCombiningAllFormsOfDataBindingComponent,
     AssignmentTwoDataBindingComponent,
-    UnderstandingDirectivesComponent
+    UnderstandingDirectivesComponent,
+    UnderstandingDirectivesUsingNglfToOutputDataConditionallyComponent
   ],
   imports: [
     BrowserModule, // This module gives us all the base functionality using which we will need to start our application.

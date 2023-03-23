@@ -1,0 +1,17 @@
+<p>understanding-directives-using-nglf-to-output-data-conditionally works!</p>
+<h4>Using <code>ngIf</code> to Output Data Unconditionally</h4>
+<div class="container">
+    <div class="container">
+        <label>Server Name</label>
+        <!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+        <!-- <p>{{ serverName }}</p> -->
+        <input type="text" class="form-control" [(ngModel)]="serverName">
+        <!-- <p>{{ serverName }}</p> -->
+        <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+        <!-- <p>{{ ServerCreationStatus }}</p> -->
+        <p>Server was created, server name is {{serverName}}</p>
+    </div>
+    <p>Now, from the above part, suppose we want to show only a small part stating, "Server was created" and there is no need for the text, "No Server was created" to be displayed. We can show this message <b>conditionally</b> using the <code>ngIf</code> directive. It works like an <code>if</code> statement</p>
+    <p>Now, we initally have the text to which we will add the directives. Before adding the <code>ngIf</code> Directive, we need to add a <code>*</code> (star) because it is a structural directive which means that it changes the structure of out DOM which means it either adds the element or it does not add that element.</p>
+    <p>After this, we will setup the condition within the <code>""</code> (Double Quotes). For <code>ngIf</code>, it has to be any expression returning <code>true</code> or <code>false</code> deciding whether it should be added or not. For this, we will also create the boolean <code>serverCreated</code> variable in the TypeScript file and create the required <code>if()</code> condition(s) and then bind the <code>serverCreated</code> variable to <code>ngIf</code> Directive.</p>
+</div>
