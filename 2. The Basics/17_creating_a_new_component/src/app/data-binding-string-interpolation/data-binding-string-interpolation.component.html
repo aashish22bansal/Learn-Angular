@@ -1,1 +1,14 @@
+<!-- <hr>
+<hr>
+<hr> -->
+<h4>String Interpolation</h4>
 <p>data-binding-string-interpolation works!</p>
+<div class="container">
+    <p>Say, we do not want to hard code the output here because it would be realistic if the server contains information about a specific server.</p>
+    <p>For example, we want to create a template as: Server with ID ___ is ___.</p>
+    <p>So, we can see that we have two dynammic fields here and it would make sense to derive them from the TypeScript Code (which have been hard coded for this example in the file).</p>
+    <p>We can use Data Binding to obtain the information as: Server with ID {{ serverId }} is {{ serverStatus }}.</p>
+    <br>
+    <p>Now, say that the data is being returned in a method (from the sample method defined in the TypeScript file).</p>
+    <p>Server with ID {{ serverId }} is {{ getServerStatus() }}.</p>
+</div>
