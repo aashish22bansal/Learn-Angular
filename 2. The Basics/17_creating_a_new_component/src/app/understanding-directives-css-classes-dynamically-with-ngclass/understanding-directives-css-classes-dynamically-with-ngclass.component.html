@@ -1,0 +1,20 @@
+<p>understanding-directives-css-classes-dynamically-with-ngclass works!</p>
+<h4>Applying CSS Classes Dynamically with <code>ngClass</code></h4>
+<div class="container">
+    <div class="container">
+        <label>Server Name</label>
+        <!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+        <!-- <p>{{ serverName }}</p> -->
+        <input type="text" class="form-control" [(ngModel)]="serverName">
+        <!-- <p>{{ serverName }}</p> -->
+        <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+        <!-- <p>{{ ServerCreationStatus }}</p> -->
+        <p *ngIf="serverCreated">Server was created, server name is {{serverName}}</p>
+        <p [ngStyle]="{'background-color': 'getColor()'}" [ngClass]="{online: serverStatus === 'online'}">{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}.</p>
+        <p [ngStyle]="{backgroundColor: getColor()}">{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}.</p>
+    </div>
+    <p>We know that <code>ngStyle</code> allows us to change the CSS Style itself but <code>ngClass</code> allows us to dynamically add or remove CSS Classes.</p>
+    <p>For this, we can add the Styles in the <code>styles <b>Component</b></code> in the TypeScript File.</p>
+    <p>We will add the <code>ngClass</code> Directive and then pass the JavaScript Object with the Key-Value pairs where the CSS Class Names are the Keys and the CSS Class Values determing the property are the Values.</p>
+    
+</div>
