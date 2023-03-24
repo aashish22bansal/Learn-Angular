@@ -22,6 +22,7 @@ import { AssignmentTwoDataBindingComponent } from './assignment-two-data-binding
 import { UnderstandingDirectivesComponent } from './understanding-directives/understanding-directives.component';
 import { UnderstandingDirectivesUsingNglfToOutputDataConditionallyComponent } from './understanding-directives-using-nglf-to-output-data-conditionally/understanding-directives-using-nglf-to-output-data-conditionally.component';
 import { UnderstandingDirectivesEnhancingNgIfWithElseConditionComponent } from './understanding-directives-enhancing-ng-if-with-else-condition/understanding-directives-enhancing-ng-if-with-else-condition.component';
+import { UnderstandingDirectivesStylingElementsDynamicallyWithNgstyleComponent } from './understanding-directives-styling-elements-dynamically-with-ngstyle/understanding-directives-styling-elements-dynamically-with-ngstyle.component';
 
 /** We can see that the AppModule is just an empty TypeScript class like our Component and we transform it to something else by using Decorator (in this case, the NgModule Decorator imported from @angular/core). */
 /** Now, within the @NgModule, we can see 4 properties:
@@ -49,7 +50,8 @@ import { UnderstandingDirectivesEnhancingNgIfWithElseConditionComponent } from '
     AssignmentTwoDataBindingComponent,
     UnderstandingDirectivesComponent,
     UnderstandingDirectivesUsingNglfToOutputDataConditionallyComponent,
-    UnderstandingDirectivesEnhancingNgIfWithElseConditionComponent
+    UnderstandingDirectivesEnhancingNgIfWithElseConditionComponent,
+    UnderstandingDirectivesStylingElementsDynamicallyWithNgstyleComponent
   ],
   imports: [
     BrowserModule, // This module gives us all the base functionality using which we will need to start our application.

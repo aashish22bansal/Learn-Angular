@@ -1,0 +1,20 @@
+<p>understanding-directives-styling-elements-dynamically-with-ngstyle works!</p>
+<h4>Styling Elements Dynamically with <code>ngStyle</code></h4>
+<div class="container">
+    <div class="container">
+        <label>Server Name</label>
+        <!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+        <!-- <p>{{ serverName }}</p> -->
+        <input type="text" class="form-control" [(ngModel)]="serverName">
+        <!-- <p>{{ serverName }}</p> -->
+        <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+        <!-- <p>{{ ServerCreationStatus }}</p> -->
+        <p *ngIf="serverCreated">Server was created, server name is {{serverName}}</p>
+        <p [ngStyle]="{'background-color': 'getColor()'}">{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}.</p>
+        <p [ngStyle]="{backgroundColor: getColor()}">{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}.</p>
+    </div>
+    <p>There are other type of Directives known as <b>Attribute Directives</b> which are called so because they look like normal HTML Attributes and are used without a <code>*</code>.</p>
+    <p>Suppose, we want to create the <code>serverStatus</code> (in the TypeScript File) dynamically. Now, we will first create the <code>constructor(){{ '{}' }}</code> in which we will generate a random value between 0 and 1. Based on the value generated, if the value is less than 0.5, then we will set the <code>serverStatus</code> to <code>offline</code> otherwise we will set it to <code>online</code>.</p>
+    <p>Now, suppose we want to change the background color also based on this value, then for that we can create another Directive and use the <code>ngStyle</code> for this. Also, for it to do something, we will need to provide some configuration to it. For this, we will use <b>Property Binding</b> on this which will get a JavaScript Object where we will find the Key-Value pairs within which Style name is the Key and the Style Value is the Value.</p>
+    <p>For example, we can bind to <code>background-color</code>.</p>
+</div>
