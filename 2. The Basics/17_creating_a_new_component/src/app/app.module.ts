@@ -25,6 +25,7 @@ import { UnderstandingDirectivesEnhancingNgIfWithElseConditionComponent } from '
 import { UnderstandingDirectivesStylingElementsDynamicallyWithNgstyleComponent } from './understanding-directives-styling-elements-dynamically-with-ngstyle/understanding-directives-styling-elements-dynamically-with-ngstyle.component';
 import { UnderstandingDirectivesCssClassesDynamicallyWithNgclassComponent } from './understanding-directives-css-classes-dynamically-with-ngclass/understanding-directives-css-classes-dynamically-with-ngclass.component';
 import { UnderstandingDirectivesOutputtingListsWithNgForComponent } from './understanding-directives-outputting-lists-with-ng-for/understanding-directives-outputting-lists-with-ng-for.component';
+import { AssignmentThreePracticingDirectivesComponent } from './assignment-three-practicing-directives/assignment-three-practicing-directives.component';
 
 /** We can see that the AppModule is just an empty TypeScript class like our Component and we transform it to something else by using Decorator (in this case, the NgModule Decorator imported from @angular/core). */
 /** Now, within the @NgModule, we can see 4 properties:
@@ -55,7 +56,8 @@ import { UnderstandingDirectivesOutputtingListsWithNgForComponent } from './unde
     UnderstandingDirectivesEnhancingNgIfWithElseConditionComponent,
     UnderstandingDirectivesStylingElementsDynamicallyWithNgstyleComponent,
     UnderstandingDirectivesCssClassesDynamicallyWithNgclassComponent,
-    UnderstandingDirectivesOutputtingListsWithNgForComponent
+    UnderstandingDirectivesOutputtingListsWithNgForComponent,
+    AssignmentThreePracticingDirectivesComponent
   ],
   imports: [
     BrowserModule, // This module gives us all the base functionality using which we will need to start our application.
