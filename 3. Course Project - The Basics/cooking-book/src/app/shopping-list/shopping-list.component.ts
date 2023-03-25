@@ -9,9 +9,9 @@ import { Ingredient } from '../shared/ingredient.model';
 export class ShoppingListComponent implements OnInit {
   // Creating the Array of ingredients
   ingredients: Ingredient[] = [
-    new Ingredient('Apples', 10);
-    new Ingredient('Banana', 20);
-    new Ingredient('Cucumber', 30);
+    new Ingredient("Apples", 10),
+    new Ingredient('Banana', 20),
+    new Ingredient('Cucumber', 30)
   ];
   constructor(){}
   ngOnInit(){}
