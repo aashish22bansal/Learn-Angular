@@ -2,6 +2,6 @@
     <app-cockpit></app-cockpit>
     <hr>
     <div class="row">
-        <app-server-element *ngFor="let serverElement of serverElements"></app-server-element>
+        <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement"></app-server-element>
     </div>
 </div>
