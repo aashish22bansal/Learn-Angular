@@ -11,4 +11,11 @@
 <div>
     <h2>Angular Style Encapsulation</h2>
     <p>According to this, Angular simply gives the same attribute to all elements in a componenet. It does this for each component with different unique attribute names and with that it can make sure that once it changed your style selector, then it automatically adds this attribute selector to all your styles defined for a component, that these styles get only applied to elements of that component. It kind of emulates the shadow DOM (which is a technology not supported by all the browsers where each elements has its kind of own shadow DOM behind it where you could then assign styles to each element).</p>
+    <p>We cannot overwrite this code but we can add the <code>encapsulation</code> Property to the <code>@Component()</code> in the TypeScript file where we can assign <code>ViewEncapsulation</code> (which will be imported from the <code>@angular/core</code>) and then choose between three modes:
+    <ol>
+        <li>Emulated: This is the default mode. This will use View Encapsulation and we will be able to see the names of the attributes in the elements, but now if we were to define any styles for this component in the CSS File, then they will be applied globally.</li>
+        <li>Native: This uses the ShadowDom Technology which should give us the same result as before with emulated but only in browsers which support it.</li>
+        <li>None: With this, we can see that the strange attribute names will not be added to the elements. Therefore, this component does not use View Encapsulation.</li>
+    </ol>
+    </p>
 </div>
