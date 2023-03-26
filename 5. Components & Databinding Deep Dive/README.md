@@ -8,3 +8,7 @@
     <p>Component Communication is very important and a key feature and with @Input(), it will make the Properties bindable from outside using the parent component using the sub-component and the same for the same for @Output() which allows the parent components using the sub-component to to listen to your own events which are created with the help of the EventEmitter. This feature allows us to make our application very dynamic by allowing us to create a lot of components and letting them talk to each other.</p>
     <p>Now, one issue with this component is that if we want two components at the same level to talk to each other, then we will have to pass the event to the parent component and then to the child component. This can make the chain of communication very complicated.</p>
 </div>
+<div>
+    <h2>Angular Style Encapsulation</h2>
+    <p>According to this, Angular simply gives the same attribute to all elements in a componenet. It does this for each component with different unique attribute names and with that it can make sure that once it changed your style selector, then it automatically adds this attribute selector to all your styles defined for a component, that these styles get only applied to elements of that component. It kind of emulates the shadow DOM (which is a technology not supported by all the browsers where each elements has its kind of own shadow DOM behind it where you could then assign styles to each element).</p>
+</div>
