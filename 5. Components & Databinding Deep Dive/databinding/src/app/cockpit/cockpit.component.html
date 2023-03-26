@@ -1,13 +1,14 @@
 <div class="row">
-    <div class="col-xs-12">
+    <!-- Method 1 -->
+    <!-- <div class="col-xs-12">
         <p>Add new Servers or blueprints!</p>
         <label>Server Name</label>
-        <!-- <input type="text" class="form-control" [(ngModel)]="newServerName"> -->
+        <! <input type="text" class="form-control" [(ngModel)]="newServerName"> >
         <input type="text" class="form-control" #serverNameInput>
         <label>Server Content</label>
-        <!-- <input type="text" class="form-control" [(ngModel)]="newServerContent"> -->
+        <! <input type="text" class="form-control" [(ngModel)]="newServerContent"> >
         <input type="text" class="form-control" #serverContentInput>
-        <!-- Right now in this file, we are using Two-Way Databinding to get the server name and content but we may not
+        <! Right now in this file, we are using Two-Way Databinding to get the server name and content but we may not
          need to use Two-Way Databinding. Since we only want to save or use the data at the point of time we click the
          button on the add-server or add-server blueprint button, it would be enough to get the value of the input at this
          point of time.
@@ -18,7 +19,24 @@
          once we click at the server on Add Server. Here, we can pass serverNameInput to onAddServer() because the other important
          thing about references is that we can use them anywhere in the template. But this cannot be used in the TypeScript code.
          Now, we will receive this as an input in the function parameter.
-        -->
+        >
+        <br>
+        <button class="btn btn-primary" (click)="onAddServer(serverNameInput)">Add Server</button>
+        <button class="btn btn-primary" (click)="onAddBlueprint(serverContentInput)">Add Server Blueprint</button>
+    </div> -->
+
+    <!-- Method 2 -->
+    <div class="col-xs-12">
+        <! There is another way to get access to Local References or to any element directly from within our TypeScript code.
+           In the previous method, we call the reference here when we call the method but sometimes we might need the access
+           before we call the method. We can use the  Decorator to get the access. >
+        <p>Add new Servers or blueprints!</p>
+        <label>Server Name</label>
+        <! <input type="text" class="form-control" [(ngModel)]="newServerName"> >
+        <input type="text" class="form-control" #serverNameInput>
+        <label>Server Content</label>
+        <! <input type="text" class="form-control" [(ngModel)]="newServerContent"> >
+        <input type="text" class="form-control" #serverContentInput>
         <br>
         <button class="btn btn-primary" (click)="onAddServer(serverNameInput)">Add Server</button>
         <button class="btn btn-primary" (click)="onAddBlueprint(serverContentInput)">Add Server Blueprint</button>
