@@ -19,3 +19,37 @@
     </ol>
     </p>
 </div>
+<div>
+    <h2>Understanding the Component Lifecycle</h2>
+    <p>ngOnInit() is a Lifecycle Hook. If a new Component is created in Angular, and of course Angular is responsible for creating
+    these components, when it finds one of our selectors, for example, it will instantiate a new version of that component and add
+    it into the DOM. So, once a new Component is instantiated, Angular goes through a couple of phases in this creation process and
+    it gives us a chance to hook into these phases and execute some code. We can hook into these phases by implementing some methods, 
+    Angular will call if they are present. The phases are:
+    <ul>
+        <li><b>ngOnChanges</b>: This is the first hook we can hook into. This may actually be executed multiple times. It's executed
+        right at the start, when a new component is created but, thereafter it is also called whenever one of the our bound input
+        properties change (which means properties decorated with @input), so whenever these properties receive new values.</li>
+        <li><b>ngOnInit</b>: This is the second hook. This method gets executed once the component has been initialised. This does
+        not mean that we can see it because it has not been added to the DOM yet, so it has not been displayed yet but Angular
+        finished the basic initialization. So, our properties can now be accesssed and initialised, for example, so the object was
+        created. If we want, then the ngOnInit will run after the constructor.</li>
+        <li><b>ngDoCheck</b>: This method will be executed a lot because this will execute whenever change detection executes. Now,
+        Change Detection, simply, is the system by which Angular determines whether something changed on the template of the component
+        or inside of a component. So, whether it needs to change something in the template, it will need to re-render that part of 
+        the template. This will be executed for every event. Change Detection is done by Angular in a very efficient manner. It is a
+        good method to be used to execute something on every change detection cycle.</li>
+        <li><b>gnAfterContentInit</b>: This is called whenever the content which is projected via ng-content has been initialised. So,
+        not the view of the component itself, but instead the view of the parent component, especially a part which will get added to
+        our component through ng-content.</li>
+        <li><b>ngAfterContentChecked</b>: This is executed whenever change detection checked this content we are projecting into our
+        component.</li>
+        <li><b>ngAfterViewInit</b>: This is executed once the view of our own component has been finished initialising, so once our 
+        view has been rendered.</li>
+        <li><b>ngAfterViewChecked</b>: This is called whenever our view has been checked. So, once we are sure that, either all 
+        changes which had to be done were displayed in the view or no changes were detected by Angular.</li>
+        <li><b>ngOnDestroy</b>: And finally, if we destroy a component, then this is called. This is used for some cleanup work 
+        because this is called right before the object itself will be destroyed by the Angular.</li>
+    </ul>
+    </p>
+</div>
