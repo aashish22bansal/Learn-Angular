@@ -2,10 +2,20 @@
     <!-- <div class="panel panel-default" *ngFor="let element of serverElements"> -->
         <div class="panel-heading">{{ element.name }}</div>
         <div class="panel-body">
-            <p>
-                <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
-                <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
-            </p>
+            <! Sometimes it might happen that we want to pass some complex HTML code into the component from outside. >
+            <! Method 3 - Section 5: Components & Databinding Deep Dive - 76 >
+            <! Now, we take the below component from here and place it in the app.component.html file.>
+            <!-- <p>
+                <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+                <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+            </p> -->
+            <! By doing this, we won't get any error but we will not get any content as well because this is the Default behaviour.
+               Everything that we place between the opening and closing tag of your own component is lost by default or it is simply
+               removed from the DOM as Angular will not take care about it. But we can change this as there is a special directive
+               in the place we want to render the component, it is "ng-content". This is a directive which serves as a hook which we
+               can place in our component to mark the place for Angular which should add any content if finds between the opening and
+               closing tag.>
+            <ng-content></ng-content>
         </div>
     <!-- </div> -->
 </div>

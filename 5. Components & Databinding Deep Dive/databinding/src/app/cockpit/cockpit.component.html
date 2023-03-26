@@ -32,13 +32,15 @@
            before we call the method. We can use the  Decorator to get the access. >
         <p>Add new Servers or blueprints!</p>
         <label>Server Name</label>
-        <! <input type="text" class="form-control" [(ngModel)]="newServerName"> >
+        <!input type="text" class="form-control" [(ngModel)]="newServerName">
         <input type="text" class="form-control" #serverNameInput>
         <label>Server Content</label>
-        <! <input type="text" class="form-control" [(ngModel)]="newServerContent"> >
+        <!input type="text" class="form-control" [(ngModel)]="newServerContent">
         <input type="text" class="form-control" #serverContentInput>
         <br>
         <button class="btn btn-primary" (click)="onAddServer(serverNameInput)">Add Server</button>
         <button class="btn btn-primary" (click)="onAddBlueprint(serverContentInput)">Add Server Blueprint</button>
     </div>
+
+    
 </div>
