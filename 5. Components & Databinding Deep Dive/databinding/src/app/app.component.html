@@ -5,7 +5,14 @@
         <button class="btn btn-primary" (click)="onChangeFirst()">Change first element</button>
         <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy first element</button>
         <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement" [name]="serverElement.name">
-            <p>
+            <! Suppose we also want to place a Local Reference on the paragraph below using #contentParagraph. Now, we want to use it 
+               in the server-element.component which is where this content will end up in the end. Now, here in the app.component, we 
+               can use the @ViewChild() because this is the template of the AppComponent even though it will be passed on to the 
+               server-element.component. Since we know that it will be there, it would also be nice if we could access it from the 
+               server-element.component, but then @ViewChild() will not work because it is not part of the view, it is part of the 
+               content which is why we also have separate hooks, ContentInit() and ViewInit(). To handle this, we also have 
+               @ContentChild().>
+            <p #contentParagraph>
                 <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
                 <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
             </p>

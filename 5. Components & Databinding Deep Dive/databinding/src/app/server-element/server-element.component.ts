@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ElementRef } from '@angular/core';
+import { Component, ContentChild, ViewChild, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -11,7 +11,14 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
   /** Inside the @Input(), we mention the alias name, so the variable name "element" can no longer be used and to access this element, "srvElement" has to be used. */
   @Input() name: string;
 
-  @ViewChild('heading', {static: true}) header: ElementRef;
+  @ViewChild('heading', {static: true}) header: ElementRef = {} as ElementRef; 
+  // To prevent ElementRef from throwing any error, we can initialize it as above.
+
+  // The @ContentChild() allows us to pass a selector, so the Reference Name contentParagraph would be selected. Then, we can store
+  // some Property in it of type ElementRef. We can use this but just like the ViewRef, we can't access the value or anything before
+  // we reached contentInit(). So, we add it to get access to content which is stored in another component, but then passed on via
+  // ngContent(). We will log this in ngOnInit().
+  @ContentChild('contentParagraph') paragraph: ElementRef = {} as ElementRef ;
 
   constructor(){
     console.log('constructor called!');
@@ -34,6 +41,8 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
   ngOnInit() {
     console.log('ngOnInit called!');
     console.log('Text Content: '+this.header.nativeElement.textContent);
+    console.log('Text content of paragraphContent: '+this.paragraph.nativeElement.textContent); // Present in ngAfterContentInit() as well
+    // Here it will be empty
   }
 
   ngDoCheck(){
@@ -42,6 +51,7 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
 
   ngAfterContentInit() {
     console.log('ngAfterContentInit called!'); // called after DoCheck() and called only once because does not get initialised again
+    console.log('Text content of paragraphContent: '+this.paragraph.nativeElement.textContent); // Here, it will give us the data.
   }
 
   ngAfterContentChecked() {
