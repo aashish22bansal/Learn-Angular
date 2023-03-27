@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+import { Component, ViewChild, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -10,6 +10,8 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
   @Input('srvElement') element: {type: string, name: string, content: string};
   /** Inside the @Input(), we mention the alias name, so the variable name "element" can no longer be used and to access this element, "srvElement" has to be used. */
   @Input() name: string;
+
+  @ViewChild('heading', {static: true}) header: ElementRef;
 
   constructor(){
     console.log('constructor called!');
@@ -31,7 +33,7 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
 
   ngOnInit() {
     console.log('ngOnInit called!');
-    
+    console.log('Text Content: '+this.header.nativeElement.textContent);
   }
 
   ngDoCheck(){
@@ -48,6 +50,8 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
 
   ngAfterViewInit() {
     console.log('ngAfterViewInit called!'); // It is called after the content has been checked
+    console.log('Text Content: '+this.header.nativeElement.textContent); // Here, we have the access to the Template Elements.
+    // We could not check the values before it hadn't been rendered yet.
   }
 
   ngAfterViewChecked() {

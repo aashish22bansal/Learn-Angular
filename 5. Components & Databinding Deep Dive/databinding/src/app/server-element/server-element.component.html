@@ -1,7 +1,9 @@
 <div class="col-xs-12">
     <!-- <div class="panel panel-default" *ngFor="let element of serverElements"> -->
         <!-- <div class="panel-heading">{{ element.name }}</div> -->
-        <div class="panel-heading">{{ name }}</div>
+        <! We know that we can use @ViewChild() to get access to an element from our DOM Template. Suppose we want to get access to
+           the heading below, so we will simply place a Local Reference on the heading.>
+        <div class="panel-heading" #heading>{{ name }}</div>
         <div class="panel-body">
             <! Sometimes it might happen that we want to pass some complex HTML code into the component from outside. >
             <! Method 3 - Section 5: Components & Databinding Deep Dive - 76 >
