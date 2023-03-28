@@ -6,3 +6,7 @@ We can start with the header-component template where we have two links: Recipes
 
 # Passing Recipe Data with Property Binding
 Now, we will work on the list of recipe.
+
+# Passing Data with Event and Property Binding (Combined)
+Here, we, somehow, need to emit an event on the single recipe-item.component, that it was clicked and then get this event somehow to the recipes.component (which then also holds the recipe detail to pass down the event data) which recipe was selected to that component.
+Now, in the single recipe-item.component.html, we have the link and we want to make sure that whenever this link is clicked, we emit an event informing our parent component that this recipe was selected. For this, we will add a click listener to this link and call the onSelected() method. This method will be implmented in recipe-item.component.ts file.

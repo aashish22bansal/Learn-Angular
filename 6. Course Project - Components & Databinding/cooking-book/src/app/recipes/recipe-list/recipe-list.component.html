@@ -19,8 +19,12 @@
                 <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive" style="max-height: 50px;">
             </span>
         </a> -->
-        <app-recipe-item *ngFor="let recipeElement of recipes" [recipe]="recipeElement"></app-recipe-item>
+        <app-recipe-item *ngFor="let recipeElement of recipes" [recipe]="recipeElement" (recipeSelected)="onRecipeSelected(recipeElement)"></app-recipe-item>
         <! By placing the ngFor here, the whole component is replicated for each recipe. Now, we do have the "recipe" which we access
            inside the recipe item component anymore, so we can add the recipe to the recipe-item.component.ts file. >
+        <! Now, if we were to implement our event and listen to recipeSelected from the event from the onSelected() method implemented 
+           in the recipe-item.component.html file, then we can see that we will already have that information in the *ngFor() loop which 
+           will replicate elements. In recipeSelected, we will again need to emit an event because we are not there where we want to be 
+           as we have to go one level up because we need to reach the recipes component which is the one implementing the recipe-list.>
     </div>
 </div>
