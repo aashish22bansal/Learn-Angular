@@ -6,7 +6,11 @@
 <hr>
 <div class="row">
     <div class="col-xs-12">
-        <a href="#" class="list-group-item clearfix" *ngFor="let recipe of recipes">
+        <! We know that the code for a single list item is shown below (within the Anchor Tag). We do have a separate recipe item
+           component but, right now, it does not hold any template because we had to outsource it and put it in recipe-list.component
+           temporarily because otherwise we wouldn't have been able to display the data. Now, that we know of the way to pass the data
+           to the component, so we can take all the code and place it into the recipe-item.component.html file. >
+        <!-- <a href="#" class="list-group-item clearfix" *ngFor="let recipe of recipes">
             <div class="pull-left">
                 <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
                 <p class="list-group-item-text">{{ recipe.description }}</p>
@@ -14,7 +18,9 @@
             <span class="pull-right">
                 <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive" style="max-height: 50px;">
             </span>
-        </a>
-        <app-recipe-item></app-recipe-item>
+        </a> -->
+        <app-recipe-item *ngFor="let recipeElement of recipes" [recipe]="recipeElement"></app-recipe-item>
+        <! By placing the ngFor here, the whole component is replicated for each recipe. Now, we do have the "recipe" which we access
+           inside the recipe item component anymore, so we can add the recipe to the recipe-item.component.ts file. >
     </div>
 </div>
