@@ -11,8 +11,10 @@
         <!ACTUAL LINKS OF THE NAVIGATION PANEL>
         <div class="navbar-default" [class.collapse]="collapsed" (window:resize)="collapsed = true">
             <ul class="nav navbar-nav">
-                <li><a routerLink="/" href="#">Recipes</a></li>
-                <li><a routerLink="/" href="#">Shopping List</a></li>
+                <li><a routerLink="/" href="#" (click)="onSelect('recipe')">Recipes</a></li>
+                <li><a routerLink="/" href="#" (click)="onSelect('shopping-list')">Shopping List</a></li>
+                <! Here, we can also work with numbers or we can fire two different methods. We will now implement the onSelect() method
+                   in the header.component.ts file. >
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
