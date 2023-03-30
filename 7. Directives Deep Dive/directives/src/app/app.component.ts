@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'directives';
+  //numbers = [1,2,3,4,5];
+  onlyOdd = false;
+
+  oddNumbers = [1, 3, 5];
+  evenNumbers = [2, 4];
+  // Now, after creating oddNumbers and evenNumbers, we can simply wrap them using a div and place ngIf() on it in the app.component.html file.
 }
