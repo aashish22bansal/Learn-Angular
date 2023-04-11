@@ -16,7 +16,9 @@
                 </div>
             </ul>
             <p appBasicHighlight>Styling with BasicDirective.</p>
-            <p appBetterHighlight>Styling with BetterHighlightDirective.</p>
+            <p appBetterHighlight >Styling with BetterHighlightDirective.</p>
+                <p appBetterHighlight [defaultColor]="'yellow'" >([highlightColor]="'red'" EXCLUEDED FROM ATTRIBUTE due to Alias below)Styling with BetterHighlightDirective using @Input() Decorator.</p>
+            <p [appBetterHighlight]="'red'" [defaultColor]="'yellow'">Styling with BetterHighlightDirective using @Input('appBetterHighlight') Decorator with the Alias.</p>
         </div>
     </div>
 </div>

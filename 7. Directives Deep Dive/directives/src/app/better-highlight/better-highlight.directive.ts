@@ -1,4 +1,4 @@
-import { Directive, Renderer2, OnInit, ElementRef, HostListener, HostBinding } from '@angular/core';
+import { Directive, Renderer2, OnInit, ElementRef, HostListener, HostBinding, Input } from '@angular/core';
 
 @Directive({
     selector: '[appBetterHighlight]'
@@ -6,11 +6,20 @@ import { Directive, Renderer2, OnInit, ElementRef, HostListener, HostBinding } f
 export class BetterHighlightDirective implements OnInit {
 
     /**
+     * Now, we might want to dynamically set the values of the Properties of the Elements via Third-Party Packages or we might want
+     * the properties to change based on certain conditions, so we can use Custom Property Binding (or Custom Event Binding).
+     * For this, we will use the @Input Decorator as:
+     */
+    @Input() defaultColor: string = 'purple';   // Thise values could be obtained from outside
+    @Input('appBetterHighlight') highlightColor: string = 'orange';
+    
+
+    /**
      * Now, we used the Renderer to create a Reactive Decorator but we can also perform the same using the @HostBinding Decorator.
      * We will bind this to some Property (whose value would be important). Now, to @HostBinding, we can pass a String defining to
      * which Property of the Hosting Element we want to bind. We will need to use Camel Casing because DOM does not recognise dashes.
      */
-    @HostBinding('style.backgroundColor') backgroundColor: string = 'purple';
+    @HostBinding('style.backgroundColor') backgroundColor: string = this.defaultColor;
 
     /**
      * 
@@ -49,15 +58,16 @@ export class BetterHighlightDirective implements OnInit {
     @HostListener('mouseenter') mouseover(eventData: Event){
         this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'orange');
         this.backgroundColor = 'orange';
+        this.backgroundColor = this.highlightColor;
     }
 
     @HostListener('mouseleave') mouseleave(eventData: Event){
         this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'transparent');
         this.backgroundColor = 'transparent';
+        this.backgroundColor = this.defaultColor;
     }
 
     // This creates a Reactive Decorator.
 
-    
     
 }
