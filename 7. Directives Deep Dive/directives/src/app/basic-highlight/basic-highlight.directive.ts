@@ -28,5 +28,10 @@ export class BasicHighlightDirective implements OnInit{
                                                                       // overwriting the style of that element. To use this Directive,
                                                                       // we will have to inform Angular of this new Directive by adding
                                                                       // this to the AppModule in the Declarations.
+        /**
+         * We know that accessing elements like this is not a good practice because Angular is also able to Render the templates without
+         * a DOM and then these Properties might not be available. It could do this when using Service Workers. So, instead of this, we
+         * will use a Renderer to access these Elements (as discussed in BetterHighlightDirective).
+         */
     }
 }
