@@ -1,9 +1,16 @@
-import { Directive, Renderer2, OnInit, ElementRef, HostListener } from '@angular/core';
+import { Directive, Renderer2, OnInit, ElementRef, HostListener, HostBinding } from '@angular/core';
 
 @Directive({
     selector: '[appBetterHighlight]'
 })
 export class BetterHighlightDirective implements OnInit {
+
+    /**
+     * Now, we used the Renderer to create a Reactive Decorator but we can also perform the same using the @HostBinding Decorator.
+     * We will bind this to some Property (whose value would be important). Now, to @HostBinding, we can pass a String defining to
+     * which Property of the Hosting Element we want to bind. We will need to use Camel Casing because DOM does not recognise dashes.
+     */
+    @HostBinding('style.backgroundColor') backgroundColor: string = 'purple';
 
     /**
      * 
@@ -41,11 +48,16 @@ export class BetterHighlightDirective implements OnInit {
      */
     @HostListener('mouseenter') mouseover(eventData: Event){
         this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'orange');
+        this.backgroundColor = 'orange';
     }
 
     @HostListener('mouseleave') mouseleave(eventData: Event){
         this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'transparent');
+        this.backgroundColor = 'transparent';
     }
 
-    // This creates a Reactive Directive.
+    // This creates a Reactive Decorator.
+
+    
+    
 }
