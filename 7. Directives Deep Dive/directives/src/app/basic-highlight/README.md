@@ -1,0 +1,1 @@
+Here, we will create a simple directive which will highlight the element we hover over.

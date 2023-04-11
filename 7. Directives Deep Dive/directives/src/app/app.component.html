@@ -15,6 +15,7 @@
                     <li class="list-group-item" [ngClass]="{evenNumber: evenNumber % 2 === 0 }" [ngStyle]="{backgroundColor: evenNumber % 2 !==0 ? 'red' : 'transparent'}" *ngFor="let evenNumber of evenNumbers">{{ evenNumber }}</li>
                 </div>
             </ul>
+            <p appBasicHighlight>Styling with BasicDirective.</p>
         </div>
     </div>
 </div>
