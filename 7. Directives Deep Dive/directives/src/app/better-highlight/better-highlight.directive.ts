@@ -1,9 +1,15 @@
-import { Directive, Renderer2, OnInit, ElementRef } from '@angular/core';
+import { Directive, Renderer2, OnInit, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
     selector: '[appBetterHighlight]'
 })
 export class BetterHighlightDirective implements OnInit {
+
+    /**
+     * 
+     * @param elRef 
+     * @param renderer 
+     */
 
     constructor(private elRef: ElementRef, private renderer: Renderer2) { 
     
@@ -27,4 +33,19 @@ export class BetterHighlightDirective implements OnInit {
          */
     }
 
+    /**
+     * Now, we need to react to some events occuring on the element the directive sits on and this can be done with the help of a 
+     * @HostListener Decorator to which we will add the method we want to execute.
+     * The Event which occurs is specified as an argument as a String within the Parenthesis of the @HostListener Decorator. We will
+     * pass the Argument Name as an Input.
+     */
+    @HostListener('mouseenter') mouseover(eventData: Event){
+        this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'orange');
+    }
+
+    @HostListener('mouseleave') mouseleave(eventData: Event){
+        this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'transparent');
+    }
+
+    // This creates a Reactive Directive.
 }
