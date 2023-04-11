@@ -3,15 +3,16 @@
         <div class="col-xs-12">
             <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">Show Only Odd Numbers</button>
             <br><br>
-
+            <! We can provide a color template by binding a CSS Class with the help of ngClass Directive. Other than this, we have the ngStyle
+               Directive as well which allows us to pass an object to some property on the ngStyle Directive.>
             <ul class="list-group">
                 <div *ngIf="onlyOdd">
-                    <li class="list-group-item" *ngFor="let oddNumber of oddNumbers">{{ oddNumber }}</li> <! Adding the Structural Directive to the list item. Now, to consider all the odd numbers, we can use the ngIf() and place it along with the ngFor() but we cannot do this because we cannot have more than one Structural Directive on the same element. So, we will make minor changes to app.component.ts by adding the oddNumber and evenNumber variables. >
+                    <li class="list-group-item" [ngClass]="{oddNumber: oddNumber % 2 !== 0 }" [ngStyle]="{backgroundColor: oddNumber % 2 !==0 ? 'yellow' : 'transparent'}" *ngFor="let oddNumber of oddNumbers">{{ oddNumber }}</li> <! Adding the Structural Directive to the list item. Now, to consider all the odd numbers, we can use the ngIf() and place it along with the ngFor() but we cannot do this because we cannot have more than one Structural Directive on the same element. So, we will make minor changes to app.component.ts by adding the oddNumber and evenNumber variables. >
                 </div>
             </ul>
             <ul class="list-group">
                 <div *ngIf="!onlyOdd">
-                    <li class="list-group-item" *ngFor="let evenNumber of evenNumbers">{{ evenNumber }}</li>
+                    <li class="list-group-item" [ngClass]="{evenNumber: evenNumber % 2 === 0 }" [ngStyle]="{backgroundColor: evenNumber % 2 !==0 ? 'red' : 'transparent'}" *ngFor="let evenNumber of evenNumbers">{{ evenNumber }}</li>
                 </div>
             </ul>
         </div>
